@@ -54,8 +54,12 @@
                         <td>{{$menu->page_name}}</td>
                         <td>{{$menu->page_link}}</td>
                         <td></td>
-                        <td><a href="{{route('menu.edit',$menu->id)}}" class="btn btn-success">Edit</a>
-                            <a href="{{route('menu.destroy',$menu->id)}}" class="btn btn-danger">Delete</a>
+                        <td> <form action="{{route('menu.destroy',$menu->id)}}" method="POST">
+                                 @csrf
+                               @method('DELETE')
+                            <a href="{{route('menu.edit',$menu->id)}}" class="btn btn-success">Edit</a>
+                            <button type="submit" class="card-link btn btn-danger">Delete</button>
+                             </form>
                         </td>
                         </tr>   
                     @endforeach
