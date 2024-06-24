@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -27,7 +28,18 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->validate([
+            'content' => 'required'
+        ]);
+
+        $content = Content::create($data);
+        if ($content) {
+            return redirect()->back()->with('success', 'Content added successfully');
+        } else {
+            return redirect()->route('content.create')->with('error', 'Content not added ');
+        }
+
     }
 
     /**

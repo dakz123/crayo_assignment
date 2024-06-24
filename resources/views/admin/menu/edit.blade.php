@@ -27,6 +27,9 @@
 
                
               </div>
+              @if (session('success'))
+               <div class="alert alert-success">{{session('success')}}</div>   
+              @endif
               <!-- /.card-header -->
               <div class="card-body">
                 <form action="{{route('menu.update',$menu->id)}}" method="POST">
@@ -63,9 +66,9 @@
                   </div>
                   <div class="form-group">
                   <label for="status">Status</label>
-                  <select class="form-control" id="status" name="status" value="{{$menu->status}}">
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
+                  <select class="form-control" id="status" name="status">
+                    <option value="1" {{ $menu->status == 1 ? 'selected' : '' }}>Active</option>
+                    <option value="0" {{ $menu->status == 0 ? 'selected' : '' }}>Inactive</option>
                     
                   </select>
                   

@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [\App\Http\Controllers\Frontend\MenuController::class, 'index'])->name('index');
 Route::get('/student', [StudentController::class, 'index'])->name('student.index');
 Route::get('/admin', [AuthController::class, 'getLogin'])->name('auth.getLogin');
 Route::post('/admin', [AuthController::class, 'login'])->name('auth.login');

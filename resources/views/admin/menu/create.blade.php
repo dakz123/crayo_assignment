@@ -27,6 +27,9 @@
 
                
               </div>
+               @if (session('success'))
+               <div class="alert alert-success">{{session('success')}}</div>   
+              @endif
               <!-- /.card-header -->
               <div class="card-body">
                 <form action="{{route('menu.store')}}" method="POST">

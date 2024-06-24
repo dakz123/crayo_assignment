@@ -102,14 +102,14 @@
               </p>
             </a>
             <a href="{{route('menu.index')}}" class="nav-link">
-              <i class="nav-icon fa fa-bars-alt"></i>
+              <i class="nav-icon fa fa-bars"></i>
               <p>
                 Manage Menu
                 
               </p>
             </a>
             <a href="{{route('content.index')}}" class="nav-link">
-              <i class="nav-icon fa fa-bars-alt"></i>
+              <i class="nav-icon fa fa-file"></i>
               <p>
                 Manage Page Content
                 
@@ -182,10 +182,8 @@
 <script src="{{asset('assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('assets/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('assets/dist/js/demo.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('assets/dist/js/pages/dashboard.js')}}"></script>
+
+@yield('scripts')
 </body>
 </html>
 
